@@ -7,3 +7,8 @@
 ### [Project Page →](https://dumdumgura.github.io/proxy2world/)
 
 Build only what matters. Generate the rest.
+
+## Release status
+
+- **Code:** Coming soon.
+- **ProxyBench:** Coming soon — we will release ProxyBench within one week.
