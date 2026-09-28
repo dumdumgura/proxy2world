@@ -1,0 +1,54 @@
+name: Publish project page
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/deploy.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download audited public website
+        env:
+          SITE_BUNDLE: https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/site-releases/20260928-b9d200e5ba8e6481.tar.gz
+          SITE_SHA256: b9d200e5ba8e64814f06dbbac62a9b1d1404351b661bb572a48a57cb0fa2c266
+        run: |
+          curl --fail --location --retry 4 --connect-timeout 30 --max-time 600 "$SITE_BUNDLE" -o website.tar.gz
+          echo "$SITE_SHA256  website.tar.gz" | sha256sum --check --strict
+          python3 - <<'PY'
+          import tarfile
+          from pathlib import PurePosixPath
+          with tarfile.open('website.tar.gz', 'r:gz') as archive:
+              members = archive.getmembers()
+              assert len(members) == 1033
+              for member in members:
+                  path = PurePosixPath(member.name)
+                  assert member.isfile() and not path.is_absolute() and '..' not in path.parts
+              archive.extractall('site', filter='data')
+          PY
+          test -f site/index.html
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: site
+          retention-days: 1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
