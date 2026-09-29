@@ -25,8 +25,8 @@ jobs:
     steps:
       - name: Download audited public website
         env:
-          SITE_BUNDLE: https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/site-releases/20260929-e19a8287b4f0b963.tar.gz
-          SITE_SHA256: e19a8287b4f0b963a88f3c05a63b7dbf24721168a086fd68f9ac9b9a07b03144
+          SITE_BUNDLE: https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/site-releases/20260929-6477b7a56f82519c.tar.gz
+          SITE_SHA256: 6477b7a56f82519c694b43cd08790f0897f89b85ccc89bcf30c5bce0c7c5b34e
         run: |
           curl --fail --location --retry 4 --connect-timeout 30 --max-time 600 "$SITE_BUNDLE" -o website.tar.gz
           echo "$SITE_SHA256  website.tar.gz" | sha256sum --check --strict
@@ -35,7 +35,7 @@ jobs:
           from pathlib import PurePosixPath
           with tarfile.open('website.tar.gz', 'r:gz') as archive:
               members = archive.getmembers()
-              assert len(members) == 1022
+              assert len(members) == 1024
               for member in members:
                   path = PurePosixPath(member.name)
                   assert member.isfile() and not path.is_absolute() and '..' not in path.parts
