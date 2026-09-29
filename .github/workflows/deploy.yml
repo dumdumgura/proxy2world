@@ -25,8 +25,8 @@ jobs:
     steps:
       - name: Download audited public website
         env:
-          SITE_BUNDLE: https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/site-releases/20260929-6477b7a56f82519c.tar.gz
-          SITE_SHA256: 6477b7a56f82519c694b43cd08790f0897f89b85ccc89bcf30c5bce0c7c5b34e
+          SITE_BUNDLE: https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/site-releases/20260929-1b04983eec98777e.tar.gz
+          SITE_SHA256: 1b04983eec98777e96b5c63f4003edf71fbb96ff1a7006c2c7c57219d957d4ec
         run: |
           curl --fail --location --retry 4 --connect-timeout 30 --max-time 600 "$SITE_BUNDLE" -o website.tar.gz
           echo "$SITE_SHA256  website.tar.gz" | sha256sum --check --strict

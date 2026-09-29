@@ -6,7 +6,7 @@
 
 ### [Project Page →](https://dumdumgura.github.io/proxy2world/)
 
-### [Paper (PDF) →](https://pub-45e73e711b024e98a21026a5fc5dcead.r2.dev/papers/Proxy2World-5edf7373f0c844ab.pdf)
+### [Paper (arXiv) →](https://arxiv.org/abs/2609.35023)
 
 Build only what matters. Generate the rest.
 
