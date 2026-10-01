@@ -5,7 +5,7 @@
 Hongli Xu, Weilong Yan, Anbang Wang, Chunyu Zou, Siyu Hong, Jingwei Huang†  
 Tencent IEG · † Corresponding author
 
-[![Demon Castle whitebox with three camera views and their rendered references](teaser.png)](https://dumdumgura.github.io/proxy2world/)
+[![Paper teaser: an interactive desert royal city proxy, generated world, and appearance variations](teaser.png)](https://dumdumgura.github.io/proxy2world/)
 
 ### [Project Page →](https://dumdumgura.github.io/proxy2world/)
 
