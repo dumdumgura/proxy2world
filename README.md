@@ -2,7 +2,10 @@
 
 **Learning to Generate Worlds from Proxies Without Seeing Them**
 
-[![Proxy2World teaser](teaser.png)](https://dumdumgura.github.io/proxy2world/)
+Hongli Xu, Weilong Yan, Anbang Wang, Chunyu Zou, Siyu Hong, Jingwei Huang†  
+Tencent IEG · † Corresponding author
+
+[![Demon Castle whitebox with three camera views and their rendered references](teaser.png)](https://dumdumgura.github.io/proxy2world/)
 
 ### [Project Page →](https://dumdumgura.github.io/proxy2world/)
 
