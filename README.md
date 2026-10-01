@@ -5,7 +5,7 @@
 Hongli Xu, Weilong Yan, Anbang Wang, Chunyu Zou, Siyu Hong, Jingwei Huang†  
 Tencent IEG · † Corresponding author
 
-[![Paper teaser: an interactive desert royal city proxy, generated world, and appearance variations](teaser.png)](https://dumdumgura.github.io/proxy2world/)
+[![Paper Figure 1 teaser: interactive desert royal city, scene proxy, generated world, and appearance variations](paper-figure1-teaser.png)](paper-figure1-teaser.png)
 
 ### [Project Page →](https://dumdumgura.github.io/proxy2world/)
 
